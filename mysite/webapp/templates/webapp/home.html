@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Processing Home</title>
+</head>
+<body>
+    <h2>Upload Images</h2>
+    <form method="post" enctype="multipart/form-data" id="imageForm">
+        {% csrf_token %}
+        <input type="file" name="image1" required>
+        <input type="file" name="image2" required>
+        <button type="submit">Process Images</button>
+    </form>
+
+    {% if result_status == 'success' %}
+        <p>{{ result_message }}</p>
+    {% endif %}
+</body>
+</html>
